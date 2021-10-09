@@ -12,8 +12,9 @@ import org.testng.annotations.Test;
 
 
 public class TitleVerificationTest {
-//TC #1: Facebook Title Verification
+    //TC #1: Facebook Title Verification
     TitleVerification titleVerification = new TitleVerification();
+
     @Test
     public void testTitle() {
         //1. Open Chrome browser
@@ -90,4 +91,4 @@ public class TitleVerificationTest {
 
 
 
-};
+}

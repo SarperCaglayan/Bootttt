@@ -36,6 +36,7 @@ public class CheckboxTests {
     }
         @Test
         public void checkboxDemo(){
+
             //TC #2:checkboxes
             //2. Go to https://www.seleniumeasy.com/test/basic-checkbox-demo.html
             //3. Verify “Success – Check box is checked” message is NOT displayed.
@@ -49,7 +50,6 @@ public class CheckboxTests {
 
         checkboxPage.checkboxDemo.click();
         assertTrue(checkboxPage.getCheckboxIsChecked.isDisplayed(),"“Success – Check box is checked” message is NOT displayed");
-
 
 
 
