@@ -11,8 +11,9 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 
 
-public class testFacebookTitle {
-//TC #1: Facebook Title Verification
+public class TitleVerificationTest {
+    //TC #1: Facebook Title Verification
+    TitleVerification titleVerification = new TitleVerification();
 
     @Test
     public void testTitle() {
@@ -46,9 +47,8 @@ public class testFacebookTitle {
         //Expected: Google
         Driver.getDriver().get("https://www.google.com");
         Driver.getDriver().findElement(By.xpath("(//*[.='Hyväksyn'])[1]")).click();
-        TitleVerification titleVerification = new TitleVerification();
-        titleVerification.gmailLinkButton.click();
 
+        titleVerification.gmailLinkButton.click();
         String expectedTitle = "Gmail: Maksuton, yksityinen ja turvallinen sähköposti | Google Workspace";
         String actualTitle = Driver.getDriver().getTitle();
 
@@ -68,13 +68,21 @@ public class testFacebookTitle {
     public void googleSearch(){
         //TC #3: Google search
         //1- Open a chrome browser
+
+        Driver.getDriver().get("https://www.google.com");
         //2- Go to: https://google.com
+        Driver.getDriver().findElement(By.xpath("(//*[.='Hyväksyn'])[1]")).click();// Click to Hyväksyn in order to pass cookies window
         //3- Write “apple” in search box
         //4- Click google search button
-        // //(instead of clicking to search button we press ENTER)
+        titleVerification.searchApple();
+
+        // (instead of clicking to search button we press ENTER)
         //5- Verify title:
         //Expected: Title should contain “apple” word
 
+        String expectedTitle= "apple";
+        String actualTitle= titleVerification.getTitle();
+        assertTrue(actualTitle.contains(expectedTitle));
 
 
 
@@ -83,4 +91,4 @@ public class testFacebookTitle {
 
 
 
-};
+}

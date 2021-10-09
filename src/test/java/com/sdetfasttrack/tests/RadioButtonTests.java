@@ -34,17 +34,17 @@ public class RadioButtonTests {
         radioButtonPage.RadioButtunMale.click();
         radioButtonPage.ButtonCheck.click();
 
-        assertTrue(radioButtonPage.getValuAsText.isDisplayed());
+        assertTrue(radioButtonPage.getValuAsText.isDisplayed(), "“Radio button 'Male' is checked” message is NOT displayed.");
 
 
         radioButtonPage.RadioButtonFemale.click();
         radioButtonPage.ButtonCheck.click();
 
-        assertTrue(radioButtonPage.getValuAsText.isDisplayed());
+        assertTrue(radioButtonPage.getValuAsText.isDisplayed(), "“Radio button 'Female' is checked” message is NOT displayed.");
 
         String expectedResult= "Radio button 'Female' is checked";
         String actualResult= radioButtonPage.getValuAsText.getText();
-        assertTrue(radioButtonPage.getValuAsText.isDisplayed());
+        assertTrue(radioButtonPage.getValuAsText.isDisplayed(),"Message is N displayed");
         assertEquals(expectedResult, actualResult, "Messages did not match") ;
     }
 }
