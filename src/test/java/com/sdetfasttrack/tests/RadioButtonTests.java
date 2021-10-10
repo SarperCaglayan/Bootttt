@@ -44,7 +44,7 @@ public class RadioButtonTests {
 
         String expectedResult= "Radio button 'Female' is checked";
         String actualResult= radioButtonPage.getValuAsText.getText();
-        assertTrue(radioButtonPage.getValuAsText.isDisplayed(),"Message is N displayed");
+        assertTrue(radioButtonPage.getValuAsText.isDisplayed(),"Message is NOT displayed");
         assertEquals(expectedResult, actualResult, "Messages did not match") ;
     }
 }
