@@ -20,6 +20,10 @@ public class DropDownPage {
     @FindBy(xpath = "//select[@id='year']")
     public WebElement yearSelector;
 
+    @FindBy(xpath = "//select[@name='Languages']")
+    public WebElement languages;
+
+
 }
 
 
@@ -31,11 +35,6 @@ public class DropDownPage {
     //4. Select Day -->  by index
     //5. Verify final selected option is California.
 
-    //TC#3
-    //1.Go to http://practice.cybertekschool.com/dropdown
-    //2. Select all the options from multiple select dropdown.
-    //3. Print out all selected values and verify each is selected.
-    //4.Deselect all values and verify each is deselected.
 
 
 
