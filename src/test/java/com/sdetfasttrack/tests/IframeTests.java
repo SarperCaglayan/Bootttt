@@ -4,6 +4,8 @@ import com.sdetfasttrack.pages.IframePage;
 import com.sdetfasttrack.utilities.Driver;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
 public class IframeTests {
     //1. Go to website: http://practice.cybertekschool.com/iframe
     //2. Locate as WebElement
@@ -18,6 +20,10 @@ public class IframeTests {
     public void iframeTest1() {
 
         Driver.getDriver().get("http://practice.cybertekschool.com/iframe");
-     //   Driver.getDriver().switchTo().frame(iframePage.iframe);
-        Driver.getDriver().switchTo().frame(iframePage.textDisplayed);
-    }   }
+        //Driver.getDriver().switchTo().frame(iframePage.iframe);
+        //Driver.getDriver().switchTo().frame(iframePage.iframeIndex);
+        Driver.getDriver().switchTo().frame(iframePage.iframeId);
+        assertTrue(iframePage.textDisplayed.isDisplayed(), "Text was NOT displayed");
+
+    }
+}

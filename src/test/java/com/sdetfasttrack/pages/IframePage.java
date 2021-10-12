@@ -12,15 +12,14 @@ public class IframePage {
 
 
     }
-    @FindBy(xpath ="//*[@id='tinymce']")
+    @FindBy(xpath ="//iframe")
     public WebElement iframe;
 
-    String iframeId= "//*[@id='tinymce']";
+    public String iframeId= "mce_0_ifr";
 
-    int iframeIndex=0;
+    public int iframeIndex=0;
 
-
-    @FindBy(xpath = "//p[.='Your content goes there']")
+    @FindBy(xpath = "//p[.='Your content goes here.']")
     public WebElement textDisplayed;
 
 
