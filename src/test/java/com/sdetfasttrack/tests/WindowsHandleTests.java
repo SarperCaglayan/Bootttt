@@ -18,8 +18,10 @@ public class WindowsHandleTests {
         String expectedTitle="Practice";
         String actualTitle=Driver.getDriver().getTitle();
         assertEquals(actualTitle,expectedTitle,"Titles did not match");
-       // windowsHandlePage.clickHereButton.click();
+
         //3. Click to: “Click Here” text
+        windowsHandlePage.clickHereButton.click();
+
         String mainHandle=Driver.getDriver().getWindowHandle();
         Set<String> windHandles=Driver.getDriver().getWindowHandles();
         //4. Switch to new Window.

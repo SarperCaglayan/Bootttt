@@ -11,6 +11,8 @@ public class WindowHandlePage {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
+    @FindBy(xpath = "//a[@href='/windows/new']")
+    public WebElement clickHereButton;
 
 
 }
