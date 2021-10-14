@@ -25,6 +25,14 @@ public class SynchronizationPage {
 
     @FindBy(id = "flash")
     public WebElement message;
+
+    @FindBy(xpath = "//strong[.='Done!']")
+    public WebElement doneMessage;
+
+    @FindBy(xpath = "//img[@src='/img/a-few-moments.jpg']")
+    public WebElement image;
+
+
 }
 
 //TC#1
@@ -37,10 +45,6 @@ public class SynchronizationPage {
 //7. Click to Submit button
 //8. Assert “Your password is invalid!” text is displayed.
 
-//TC#2
-//1. Go to http://practice.cybertekschool.com/dynamic_loading/7
-//2. Wait until title is “Dynamic title”
-//3. Assert : Message “Done” is displayed.
-//4. Assert : Image is displayed.
+
 
 

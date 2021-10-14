@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.*;
 
 public class SyncronizationTests {
@@ -13,7 +14,7 @@ public class SyncronizationTests {
     SynchronizationPage synchronizationPage = new SynchronizationPage();
 
     @Test
-    public void SyncTest1(){
+    public void SyncTest1() {
 
         //TC#1
         //1. Go to http://practice.cybertekschool.com/dynamic_loading/1
@@ -26,9 +27,9 @@ public class SyncronizationTests {
         //8. Assert “Your password is invalid!” text is displayed.
         Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/1");
         synchronizationPage.startButton.click();
-        WebDriverWait webDriverWait= new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), 10);
         webDriverWait.until(ExpectedConditions.visibilityOf(synchronizationPage.username));
-        assertTrue(synchronizationPage.username.isDisplayed(),"Username was not displayed");
+        assertTrue(synchronizationPage.username.isDisplayed(), "Username was not displayed");
 
         synchronizationPage.username.sendKeys("tomsmith");
         synchronizationPage.password.sendKeys("incorrectpassword");
@@ -38,5 +39,23 @@ public class SyncronizationTests {
         assertTrue(synchronizationPage.message.isDisplayed(), "The message was NOT displayed");
 
 
+    }
+
+    @Test
+    public void SyncTest2() {
+
+        //TC#2
+        //1. Go to http://practice.cybertekschool.com/dynamic_loading/7
+        //2. Wait until title is “Dynamic title”
+        //3. Assert : Message “Done” is displayed.
+        //4. Assert : Image is displayed.
+        Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/7");
+
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),10);
+//        wait.until(ExpectedConditions.titleIs("Dynamic title"));
+        wait.until(ExpectedConditions.visibilityOf(synchronizationPage.doneMessage));
+        wait.until(ExpectedConditions.visibilityOf(synchronizationPage.image));
+        assertTrue(synchronizationPage.doneMessage.isDisplayed(), "The 'Done!' message was NOT displayed");
+        assertTrue(synchronizationPage.image.isDisplayed(), "The image was NOT displayed");
     }
 }
