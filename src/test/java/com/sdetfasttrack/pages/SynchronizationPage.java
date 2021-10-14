@@ -11,7 +11,7 @@ public class SynchronizationPage {
 
     }
 
-    @FindBy(xpath = "//div[@id= 'start']")
+    @FindBy(xpath = "//button[contains(.,'Start')]")
     public WebElement startButton;
 
     @FindBy(id = "username")
@@ -20,7 +20,7 @@ public class SynchronizationPage {
     @FindBy(id = "pwd")
     public WebElement password;
 
-    @FindBy(xpath = "//button[type= 'submit']")
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Submit')]")
     public WebElement submitButton;
 
     @FindBy(id = "flash")

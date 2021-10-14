@@ -26,9 +26,16 @@ public class SyncronizationTests {
         //8. Assert “Your password is invalid!” text is displayed.
         Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/1");
         synchronizationPage.startButton.click();
-        WebDriverWait webDriverWait= new WebDriverWait(Driver.getDriver(), 15);
+        WebDriverWait webDriverWait= new WebDriverWait(Driver.getDriver(), 10);
         webDriverWait.until(ExpectedConditions.visibilityOf(synchronizationPage.username));
-        assertTrue(synchronizationPage.username.isDisplayed());
+        assertTrue(synchronizationPage.username.isDisplayed(),"Username was not displayed");
+
+        synchronizationPage.username.sendKeys("tomsmith");
+        synchronizationPage.password.sendKeys("incorrectpassword");
+
+        synchronizationPage.submitButton.click();
+
+        assertTrue(synchronizationPage.message.isDisplayed(), "The message was NOT displayed");
 
 
     }
