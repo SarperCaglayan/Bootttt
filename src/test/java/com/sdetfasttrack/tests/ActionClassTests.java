@@ -1,6 +1,7 @@
 package com.sdetfasttrack.tests;
 
 import com.sdetfasttrack.pages.ActionPage;
+import com.sdetfasttrack.pages.AlertClass;
 import com.sdetfasttrack.utilities.Driver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -47,6 +48,11 @@ public class ActionClassTests {
 
         Driver.getDriver().get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2");
         Driver.getDriver().findElement(By.xpath("//div[@id='accept-choices']")).click();
+
+        Alert alert1= Driver.getDriver().switchTo().alert();
+
+                alert1.dismiss();
+
 
         ActionPage actionPage= new ActionPage();
         Actions actions= new Actions(Driver.getDriver());

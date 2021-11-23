@@ -31,7 +31,10 @@ public class ActionPage {
     @FindBy(xpath = "//div[@id='hot-spot']")
     public WebElement rightClick;
 
-    @FindBy(id = "demo")
+    @FindBy(id = "accept-choices")
+    public WebElement alertAccept;
+
+    @FindBy(id = "/p[@id='demo']")
     public WebElement doubleclick;
     //TC#2
     //1. Go	to https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2
